@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Price Prediction</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <!-- Main Title for Home Page -->
+  <h1 class="home-main-title">Car Price Prediction Simulator</h1>
+  
+  <!-- Page Title -->
+  <h2 class="home-page-title">Welcome to Car Price Prediction</h2>
+  
+  <!-- Models Subtitle -->
+  <h3 class="home-models-subtitle">Machine Learning Models</h3>
+  
+  <!-- Model Boxes -->
+  <a href="/predict_first" class="home-model-box first-model">
+    <h2>🚀 Scikit-Learn Based Car Price Prediction Model</h2>
+    <p>This model is trained using standard scikit-learn algorithms.</p>
+    <span class="click-text">Click to use the model ➝</span>
+  </a>
+  
+  <a href="/predict_second" class="home-model-box second-model">
+    <h2>🚀 Custom Linear Regression Based Car Price Prediction Model</h2>
+    <p>This model uses a custom linear regression algorithm with Polynomial, Lasso, Ridge and Normal regressions, Xavier initialization, and momentum.</p>
+    <span class="click-text">Click to use the model ➝</span>
+  </a>
+  
+  <a href="/predict_third" class="home-model-box third-model">
+    <h2>🚀 MLflow Deployed Car Price Classification Model</h2>
+    <p>This model is deployed via MLflow Model Registry and predicts price classes .</p>
+    <span class="click-text">Click to use the model ➝</span>
+  </a>
+  
+  <!-- Footer -->
+  <div class="footer">
+    <p>Made by Oak Soe Kyaw (ST125064)</p>
+  </div>
+</body>
+</html>
