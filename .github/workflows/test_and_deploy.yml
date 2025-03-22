@@ -36,6 +36,9 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v3
 
+      - name: Ping School Server
+        run: ping -c 4 ${{ secrets.SSH_HOST }}
+
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
 
@@ -60,6 +63,7 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           passphrase: ${{ secrets.SSH_PASSPHRASE }}
+          timeout: 60 # increase timeout if needed
           script: |
             cd st125064_03
             docker-compose pull
