@@ -66,7 +66,7 @@ jobs:
           proxy_passphrase: ${{ secrets.SSH_PASSPHRASE }}
           script: |
             cd st125064_03
-            docker-compose down
-            docker-compose up -d
+            docker compose down
+            docker compose up -d
         env:
           SSH_CONFIG: ${{ github.workspace }}/config/ssh_config
