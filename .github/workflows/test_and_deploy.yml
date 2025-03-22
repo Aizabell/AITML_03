@@ -48,8 +48,8 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v4
         with:
-          context: ./app
-          file: Dockerfile
+          context: .
+          file: app/Dockerfile
           push: true
           tags: harryphoebus/ml_assignment03:latest
 
