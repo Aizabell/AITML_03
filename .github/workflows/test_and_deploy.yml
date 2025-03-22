@@ -62,7 +62,6 @@ jobs:
           passphrase: ${{ secrets.SSH_PASSPHRASE }}
           proxy_host: bazooka.cs.ait.ac.th
           proxy_username: st125064
-          timeout: 60 # increase timeout if needed
           script: |
             cd st125064_03
             docker-compose pull
