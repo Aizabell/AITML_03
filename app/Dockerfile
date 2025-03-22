@@ -11,13 +11,13 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the rest of the application files
-COPY . .
+COPY app/ .
 
 # Expose Flask's port
 EXPOSE 5001
 
 # Run the Flask app
-CMD ["python", "app/app.py"]
+CMD ["python", "app.py"]
 
 
 
