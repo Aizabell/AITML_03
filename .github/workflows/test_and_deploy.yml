@@ -65,8 +65,8 @@ jobs:
           proxy_key: ${{ secrets.SSH_PRIVATE_KEY }}
           proxy_passphrase: ${{ secrets.SSH_PASSPHRASE }}
           script: |
-            cd st125064_03
-            docker-compose pull
-            docker-compose up -d
+            tag-${{github.ref_name}} docker compose -f st125064_03/docker-compose.yaml down
+            tag-${{github.ref_name}} docker compose -f st125064_03/docker-compose.yaml up -d
+
         env:
           SSH_CONFIG: ${{ github.workspace }}/config/ssh_config
