@@ -56,12 +56,11 @@ jobs:
       - name: Deploy to School Server via SSH (Docker Compose)
         uses: appleboy/ssh-action@v0.1.6
         with:
-          host: ml.brain.cs.ait.ac.th
+          host: MLServer
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           passphrase: ${{ secrets.SSH_PASSPHRASE }}
-          proxy_host: bazooka.cs.ait.ac.th
-          proxy_username: st125064
+
           script: |
             cd st125064_03
             docker-compose pull
