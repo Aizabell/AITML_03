@@ -63,7 +63,7 @@ jobs:
           proxy_host: ${{ secrets.PROXY_HOST }}
           proxy_username: ${{ secrets.SSH_USERNAME }}
           proxy_key: ${{ secrets.SSH_PRIVATE_KEY }}
-
+          proxy_passphrase: ${{ secrets.SSH_PASSPHRASE }}
           script: |
             cd st125064_03
             docker-compose pull
