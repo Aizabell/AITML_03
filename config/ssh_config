@@ -1,0 +1,10 @@
+Host bazooka
+    HostName bazooka.cs.ait.ac.th
+    User st125064
+    IdentityFile ~/.ssh/st125064
+
+Host MLServer
+    HostName ml.brain.cs.ait.ac.th
+    User st125064
+    IdentityFile ~/.ssh/st125064
+    ProxyJump bazooka

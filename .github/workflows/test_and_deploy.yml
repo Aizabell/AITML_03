@@ -64,3 +64,5 @@ jobs:
             cd st125064_03
             docker-compose pull
             docker-compose up -d
+        env:
+          SSH_CONFIG: ${{ github.workspace }}/config/ssh_config
