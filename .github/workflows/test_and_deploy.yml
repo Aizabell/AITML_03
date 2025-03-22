@@ -61,6 +61,6 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           passphrase: ${{ secrets.SSH_PASSPHRASE }}
           script: |
-            cd /path/to/your/docker-compose-directory
+            cd st125064_03
             docker-compose pull
             docker-compose up -d
