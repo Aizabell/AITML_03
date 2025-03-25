@@ -11,8 +11,9 @@
 
 The **Car Price Prediction Simulator** is a Flask-based web application designed to predict the selling price of a car based on user-provided parameters. It leverages two distinct **machine learning models**:
 
-- **Old Model**: Uses a **Random Forest Regressor** trained on car price data.
-- **New Model**: A **custom-built Linear Regression model** with feature scaling and polynomial transformation.
+- **Model V 1.0**: A **Random Forest Regressor** trained on car price data.
+- **Model V 2.0**: A **custom-built Linear Regression model** with feature scaling and polynomial transformation.
+- **Model V 3.0**: A **custom-built Multinomial Classification model** that converts continuous selling prices into four discrete range for classification.
 
 This version is **fully containerized using Docker**, making deployment and usage seamless across different environments.
 
@@ -33,15 +34,21 @@ This version is **fully containerized using Docker**, making deployment and usag
    - Handles missing values by applying imputation techniques.
    - Allows users to make predictions based on essential car details such as year,max power, engine, owner, fuel, and transmission.
 
-3. **Two Prediction Models**:
-#### **Old Model (Random Forest Regressor)**
+3. **Three Prediction Models**:
+#### **Model V 1.0 (Random Forest Regressor)**
 - A pre-trained **sckit learn based model** that predicts car prices based on past data.
 - Handles **non-linearity and complex interactions** between car features.
 
-#### **New Model (Custom Linear Regression)**
+#### **Model V2.0 (Custom Linear Regression)**
 - **Polynomial Regression** with **Feature Scaling**.
 - Trained with Polynomial, Lassoo, and Ridge regularization, xavier weight initialization, momentum and learning rates with 0.01, 0.001, and 0.0001.
 - **Better interpretability** compared to Random Forest.
+
+#### **Model V3.0 (Custom Multinomial Classification)**
+- Continuous selling prices are converted into four discrete ranges for classification.
+- Trained with  3 different learning rates with 0.01, 0.001, and 0.0001 and 3 different gradient descent methods.
+- Ridge Regularization is also included as well.
+
 
 4. **Technology Stack**:
 
@@ -49,12 +56,17 @@ This version is **fully containerized using Docker**, making deployment and usag
    - Frontend: HTML, CSS.
    - Machine Learning: Scikit-learn models
    - Algorithms: 
-      - Old Model → Random Forest Regressor
-      - New Model → Custom Linear Regression
+      - Model V 1.0 → Random Forest Regressor
+      - Model V 2.0 → Custom Linear Regression
+      - Model V 3.0 → Custom Multinomial Classification
 
 5. **Dockerized Deployment**:
    - Fully containerized using Docker for easy deployment.
    - Ready-to-use `docker-compose` for launching the application.
+
+6. **CI/CD Pipeline**:
+   - GitHub Actions for automated testing and deployment.
+
 
 ---
 
@@ -65,7 +77,7 @@ This version is **fully containerized using Docker**, making deployment and usag
 1. **Clone the Repository**:
 
 ```bash
-git clone <https://github.com/Aizabell/AITML_A2.git>
+git clone <https://github.com/Aizabell/AITML_A3.git>
 ```
 
 2. **Set up a Virtual Environment**:
@@ -105,13 +117,13 @@ The application will be accessible at http://127.0.0.1:5001.
 
 ```bash
 # Build the Docker image in app directory
-docker build -t harryphoebus/ml_assignment02:latest . 
+docker build -t harryphoebus/ml_assignment03:latest . 
 ```
 
 2. **Run the Application**:
 
 ```bash
-docker run -p 5001:5001 harryphoebus/ml_assignment02:latest
+docker run -p 5001:5001 harryphoebus/ml_assignment03:latest
 ```
 
 **Using Docker Compose**: Ensure the docker-compose.yml file is correctly set up, then run:
@@ -156,7 +168,7 @@ http://localhost:5001
 - Fuel: `Petrol`
 - Transmission: `Manual`
 
-**Prediction**: `$12,500.00`
+**Prediction**: `Luxury`
 
 **Input:**
 
@@ -167,7 +179,7 @@ http://localhost:5001
 - Fuel: `Diesel`
 - Transmission: `Automatic`
 
-**Prediction**: `$18,700.00`
+**Prediction**: `Cheap`
 
 ---
 
