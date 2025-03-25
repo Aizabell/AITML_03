@@ -189,11 +189,27 @@ http://localhost:5001
 
 ![App Screenshot](images/LandingPage.png "Car Price Prediction Simulator")
 
-### Old Model Page
+### Model Page
 
-![App Screenshot](images/OldModel.png "Car Price Prediction Simulator")
+![App Screenshot](images/Model.png "Car Price Prediction Simulator")
 
-### New Model Page
+### Prediction Page
 
-![App Screenshot](images/NewModel.png "Car Price Prediction Simulator")
+![App Screenshot](images/Prediction.png "Car Price Prediction Simulator")
 
+## Conclusion
+
+
+This version (V3.0) introduces:
+
+- A custom multinomial classification model with 4-class prediction.
+
+- Custom classification metrics and their validation against scikit-learn's report.
+
+- Ridge regularization in logistic regression.
+
+- Experiment tracking with MLflow and model registration.
+
+- A fully automated CI/CD pipeline using GitHub Actions that runs tests, builds a Docker image, and deploys the app via SSH with Docker Compose.
+
+- Containerized deployment using Docker and Docker Compose with Traefik integration.
